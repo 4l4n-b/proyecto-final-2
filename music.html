@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova-music</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #101010;
+            color: white;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #1c1c1c;
+        }
+
+        header h1 {
+            font-size: 20px;
+            margin: 0;
+        }
+
+        nav {
+            width: 200px;
+            background-color: #1c1c1c;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 20px 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 10px 0;
+        }
+
+        nav ul li a {
+            color: #dddddd;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            color: #ffe600;
+        }
+
+        main {
+            margin-left: 220px;
+            padding: 20px;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .table th, .table td {
+            text-align: left;
+            padding: 10px;
+            border-bottom: 1px solid #333;
+        }
+
+        .table th {
+            background-color: #1c1c1c;
+        }
+
+        .table tr:hover {
+            background-color: #222;
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .icon-play {
+            color: red;
+        }
+
+        .icon-pause {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h2>Nova-music</h2>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">My Mix</a></li>
+        </ul>
+        <a href="./index.html" style="color: #dddddd; font-size: 16px; margin-top: 20px; display: block;">Salir</a>
+    </nav>
+
+    <main>
+        <header>
+            <h1>My Mix</h1>
+        </header>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>TITLE</th>
+                    <th>ARTIST</th>
+                    <th>TIME</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="icon">💿</span></td>
+                    <td>Loneliness</td>
+                    <td>CHMCL SØUP</td>
+                    <td>02:13</td>
+                    <td>
+                        <audio id="audio1" src="./audio/Loneliness.mp3"></audio>
+                        <button class="icon icon-play" onclick="playSong('audio1')">▶</button>
+                        <button class="icon icon-pause" onclick="pauseSong('audio1')">⏸</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="icon">💿</span></td>
+                    <td>EMPTY DREAMS</td>
+                    <td>CYPARRIS</td>
+                    <td>02:15</td>
+                    <td>
+                        <audio id="audio2" src="./audio/EMPTY DREAMS.mp3"></audio>
+                        <button class="icon icon-play" onclick="playSong('audio2')">▶</button>
+                        <button class="icon icon-pause" onclick="pauseSong('audio2')">⏸</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="icon">💿</span></td>
+                    <td>Roi</td>
+                    <td>?????!</td>
+                    <td>05:06</td>
+                    <td>
+                        <audio id="audio3" src="./audio/Roi.mp3"></audio>
+                        <button class="icon icon-play" onclick="playSong('audio3')">▶</button>
+                        <button class="icon icon-pause" onclick="pauseSong('audio3')">⏸</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="icon">💿</span></td>
+                    <td>Forgotten Time</td>
+                    <td>Gemic Sounds</td>
+                    <td>02:30</td>
+                    <td>
+                        <audio id="audio4" src="./audio/Forgotten Time.mp3"></audio>
+                        <button class="icon icon-play" onclick="playSong('audio4')">▶</button>
+                        <button class="icon icon-pause" onclick="pauseSong('audio4')">⏸</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="icon">💿</span></td>
+                    <td>Time</td>
+                    <td>YaaRaGo</td>
+                    <td>03:31</td>
+                    <td>
+                        <audio id="audio5" src="./audio/Time.mp3"></audio>
+                        <button class="icon icon-play" onclick="playSong('audio5')">▶</button>
+                        <button class="icon icon-pause" onclick="pauseSong('audio5')">⏸</button>
+                    </td>
+                <tr>
+                    <td><span class="icon">💿</span></td>
+                    <td>Highlight Of My Life</td>
+                    <td>Oliver Tree</td>
+                    <td>02:29</td>
+                    <td>
+                        <audio id="audio6" src="./audio/highlight of my life.mp3"></audio>
+                        <button class="icon icon-play" onclick="playSong('audio6')">▶</button>
+                        <button class="icon icon-pause" onclick="pauseSong('audio6')">⏸</button>
+                    </td>
+                <tr>
+                    <td><span class="icon">💿</span></td>
+                    <td>Marla</td>
+                    <td>IDLEGLANCE</td>
+                    <td>01:39</td>
+                    <td>
+                        <audio id="audio7" src="./audio/Better Off Alone.mp3"></audio>
+                        <button class="icon icon-play" onclick="playSong('audio7')">▶</button> 
+                        <button class="icon icon-pause" onclick="pauseSong('audio7')">⏸</button>                          
+                     </td>
+                <tr>
+                    <td><span class="icon">💿</span></td>
+                    <td>You look lonely, i can fix that</td>
+                    <td>IDLEGLANCE</td>
+                    <td>03:08</td>
+                    <td>
+                        <audio id="audio8" src="./audio/you look lonely.mp3"></audio>                            
+                        <button class="icon icon-play" onclick="playSong('audio8')">▶</button> 
+                        <button class="icon icon-pause" onclick="pauseSong('audio8')">⏸</button>                          
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <script>
+        function playSong(id) {
+            const audio = document.getElementById(id);
+            stopAllSongs(); // Detenemos cualquier canción en reproducción
+            audio.play();
+        }
+
+        function pauseSong(id) {
+            const audio = document.getElementById(id);
+            audio.pause();
+        }
+
+        function stopAllSongs() {
+            const audios = document.querySelectorAll('audio');
+            audios.forEach(audio => audio.pause());
+        }
+    </script>
+</body>
+</html>
